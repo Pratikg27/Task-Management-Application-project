@@ -1,0 +1,38 @@
+
+
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Task Manager</h1>
+  <form (ngSubmit)="addTask()" class="mb-4">
+    <mat-card class="task-form-card">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Title" [(ngModel)]="newTask.title" name="title" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Description" [(ngModel)]="newTask.description" name="description"></textarea>
+      </mat-form-field>
+      <mat-slide-toggle [(ngModel)]="newTask.completed" name="completed">Completed</mat-slide-toggle>
+      <button mat-raised-button color="primary" type="submit" id="addtask" class="full-width">Add Task</button>
+    </mat-card>
+  </form>
+
+  <mat-card *ngFor="let task of tasks" class="mb-2 task-card" [ngClass]="{'completed-task': task.completed, 'incomplete-task': !task.completed}">
+    <mat-card-content>
+      <div class="task-header">
+        <mat-form-field class="task-title full-width">
+          <input matInput [(ngModel)]="task.title" name="title">
+        </mat-form-field>
+        <button mat-icon-button color="warn" (click)="deleteTask(task.id)" class="delete-button">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <mat-form-field class="full-width">
+        <textarea matInput [(ngModel)]="task.description" name="description"></textarea>
+      </mat-form-field>
+      <mat-slide-toggle [(ngModel)]="task.completed" name="completed">Completed</mat-slide-toggle>
+      <div class="task-actions">
+        <button mat-raised-button color="accent" (click)="updateTask(task)">Update</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

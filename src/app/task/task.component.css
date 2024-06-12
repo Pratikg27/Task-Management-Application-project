@@ -1,0 +1,50 @@
+
+.completed-task {
+  background-color: #d4edda; /* Light green background */
+}
+
+.incomplete-task {
+  background-color: #f8d7da; /* Light red background */
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.task-form-card {
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.task-card {
+  padding: 16px;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-title {
+  flex-grow: 1;
+}
+
+.delete-button {
+  margin-left: 8px;
+}
+
+
+.task-actions {
+  margin-top: 16px;
+  text-align: right;
+}
+
+
+#addtask{
+  margin: 10px;
+}
