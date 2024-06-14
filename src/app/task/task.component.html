@@ -1,10 +1,7 @@
-
-
-
 <div class="container mt-5">
   <h1 class="text-center mb-4">Task Manager</h1>
   <form (ngSubmit)="addTask()" class="mb-4">
-    <mat-card class="task-form-card">
+    <mat-card class="task-form-card form-card">
       <mat-form-field class="full-width">
         <input matInput placeholder="Title" [(ngModel)]="newTask.title" name="title" required>
       </mat-form-field>
